@@ -16,7 +16,7 @@ class CustomUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, password, **kwargs):
+    def create_superuser(self, email, password, name):
         """Create and save a superuser with the given email and password"""
         user = self.create_user(email, name, password)
 
