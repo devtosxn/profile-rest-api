@@ -37,7 +37,7 @@ class ProfileFeedViewSet(viewsets.ModelViewSet):
     serializer_class = ProfileFeedSerializer
     queryset = ProfileFeed.objects.all()
     permission_classes = (IsProfileFeedOwnerOrReadOnly,
-                          permissions.IsAuthenticatedOrReadOnly)
+                          permissions.IsAuthenticated)
 
     def perform_create(self, serializer):
         """Sets the user profile to the logged in user"""
